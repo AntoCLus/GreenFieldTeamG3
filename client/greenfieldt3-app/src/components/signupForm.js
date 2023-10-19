@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './loginSignup.css'
 
 export default class SignUp extends Component {
     render() {
@@ -7,7 +8,7 @@ export default class SignUp extends Component {
                 <h3>Sign Up</h3>
 
                 <div className="mb-3">
-                    <label>First name</label>
+                    <label></label>
                     <input
                         type="text"
                         className="form-control"
@@ -15,11 +16,11 @@ export default class SignUp extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label>Last name</label>
+                    <label></label>
                     <input type="text" className="form-control" placeholder="Last name" />
                 </div>
                 <div className="mb-3">
-                    <label>Email address</label>
+                    <label></label>
                     <input
                         type="email"
                         className="form-control"
@@ -27,7 +28,7 @@ export default class SignUp extends Component {
                     />
                 </div>
                 <div className="mb-3">
-                    <label>Password</label>
+                    <label></label>
                     <input
                         type="password"
                         className="form-control"

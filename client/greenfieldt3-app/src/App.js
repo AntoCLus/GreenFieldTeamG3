@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
       </header>
       <div className= "login">
-      <Link className="nav-link" to={'/sign-in'}>Login</Link>
+      <Link className="nav-link" to={'/sign-in'}>Login </Link>
       <Link className="nav-link" to={'/sign-up'}>Sign up</Link>
       </div>
       <Routes>
