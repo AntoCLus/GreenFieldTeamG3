@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { useState } from 'react'
 import './loginSignup.css'
+import axios from 'axios'
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -22,6 +23,16 @@ export default class SignUp extends Component {
         e.preventDefault();
         const { name, lastName, email, password } = this.state;
         console.log("Form Data:", { name, lastName, email, password });
+        axios.post("http://localhost:8000//register",
+        { name, lastName, email, password })
+        .then(response => {
+            // Handle the successful response from the server
+            console.log('Registered successfully: ', response.data);
+        })
+        .catch(error => {
+            // Handle any errors
+            console.error('Error:', error);
+        });
         
     }
     render() {
