@@ -1,0 +1,47 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 1.5rem;
+}
+.custom-control-custom-checkbox{
+    display: flex;
+    justify-content: center;
+}
+.custom-control-label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:2vh;
+}
+p{
+    font-size: 12px;
+    text-decoration: underline;
+}
+input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    width: 300px;
+  }
+  
+
+  input:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  input::placeholder {
+    color: #999;
+  }
+  
+
+  input:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+  }
