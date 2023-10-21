@@ -7,6 +7,11 @@ function Home (){
 
     return(
         <div>
+            <h2>Your shopping list!! Please add what you have bought today:</h2>
+
+
+
+            <p> </p>
 
         </div>
     )
