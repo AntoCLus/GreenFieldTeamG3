@@ -1,0 +1,17 @@
+/* 
+.toggle-icon {
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.toggle-icon:hover {
+    color: #666;
+}
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}  */

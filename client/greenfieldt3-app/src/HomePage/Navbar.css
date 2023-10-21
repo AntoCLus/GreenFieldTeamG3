@@ -1,0 +1,18 @@
+/* Navbar.css */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-item a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+  
