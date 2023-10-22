@@ -3,19 +3,101 @@ import React from "react"
 import { useEffect } from "react";
 import { useState } from "react"
 import axios from "axios"
-import ItemForm from "./itemForm";
+import AddItem from "./createItem";
+import DeleteItem from "./deleteItem";
 
 const Home = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("https://localhost:8000/item")
+            .then((response) => {
+                setItems(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching items:", error);
+            });
+    }, []);
+
+    const handleDeleteItem = (itemId) => {
+        axios
+            .delete(`http://localhost:8000/item/${itemId}`)
+            .then((res) => {
+                console.log(`Item with ID ${itemId} deleted successfully`);
+                setItems(prevItems => prevItems.filter(item => item._id !== itemId));
+            })
+            .catch((err) => {
+                console.error(`Error deleting item with ID ${itemId}:`, err);
+            });
+    };
+
+    return (
+        <>
+            <h2 className="container">
+                Your shopping list!! Please add what you have bought today:
+            </h2>
+            
+            {items && items.length > 0 ? (
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {items.map((item) => (
+                        <tr key={item._id}>
+                            <td>{item.name}</td>
+                            <td>{item.price}</td>
+                            <td>{item.quantity}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+             ) : (
+              <p>My Items.</p>
+            )}
+        
+           
+        <AddItem />
+        <DeleteItem />
+                  
+
+            <p>List the items you have bought today</p>
+        </>
+            
+    );
+}
+
+export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+/*import ItemForm from "./itemForm";*/
+
+/*const Home = () => {
     const [items, setItems] = useState([]); // Changed items to an array
     
-    const [Item, setItem] = useState({ // Changed 'items' to 'Item'
+    /*const [Item, setItem] = useState({ // Changed 'items' to 'Item'
       name: "",
       price: "",
       quantity: "",
-    });
+    });*/
     
   
-    useEffect(() => {
+ /*   useEffect(() => {
       axios
         .get("https://localhost:8000/item") //call it from back
         .then((response) => {
@@ -36,7 +118,7 @@ const Home = () => {
   
     const handleAddItem = () => {
       axios
-          .post('https://localhost:8000/create', Item)
+          .post('https://localhost:8000/item/create', Item)
           .then((res) => {
               console.log(`Item ${res.data.newItem.name} created successfully`);
               //setItems(prevItems => [...prevItems, res.data.newItem]);
@@ -97,7 +179,7 @@ const Home = () => {
   );
             }
   export default Home;
-
+*/
   /* <input
           type="text"
           value={Item.name}

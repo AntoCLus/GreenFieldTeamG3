@@ -1,6 +1,5 @@
 import React, { useState} from "react";
 import axios from 'axios';
-import ItemForm from "./itemForm";
 
 const AddItem = () => {
     const [name, setName] = useState('');
@@ -13,8 +12,6 @@ const AddItem = () => {
             price,
             quantity,
         };
-     /*   onAddItem(itemData);
-    }*/
 
         for (let i = 0; i < quantity; i++) {
             axios
@@ -29,8 +26,7 @@ const AddItem = () => {
                 console.error('Error creating item:', err);
               });              
         }
-    }
-
+    };
 
     return (
         <div className="add-item">
@@ -56,5 +52,6 @@ const AddItem = () => {
             <button onClick={handleAdd}>Add Item(s)</button>
         </div>
     );
-    }
-export default AddItem
+};
+
+export default AddItem;

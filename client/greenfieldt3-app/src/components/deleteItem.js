@@ -44,7 +44,7 @@ const DeleteItem = () => {
 
     return (
             <div>
-      <h2 className='h2-delete'>Delete PC Parts</h2>
+      <h2 className='h2-delete'>Delete items</h2>
       <button className='deleteBtn' onClick={handleDeleteSelected}>Delete Selected</button>
       <table>
         <thead>
