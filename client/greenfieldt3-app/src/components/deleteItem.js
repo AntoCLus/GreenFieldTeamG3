@@ -20,7 +20,7 @@ const DeleteItem = () => {
     };
 
 
-    const handleChechboxChange = (itemId) => {
+    const handleCheckboxChange = (itemId) => {
         if (selectedItems.includes(itemId)) {
             setSelectedItems(selectedItems.filter((id) => id !== itemId));
         } else {
@@ -43,11 +43,40 @@ const DeleteItem = () => {
 
 
     return (
-        <div>
-            <button className='deleteBtn' onClick={handleDeleteSelected}>Delete Selected</button>
-            
-        </div>
-    )
+            <div>
+      <h2 className='h2-delete'>Delete PC Parts</h2>
+      <button className='deleteBtn' onClick={handleDeleteSelected}>Delete Selected</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((items) => (
+            <tr key={items._id}>
+              <td>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={selectedItems.includes(items._id)}
+                    onChange={() => handleCheckboxChange(items._id)}
+                  />
+                  {items.name}
+                </label>
+              </td>
+              <td>{items.description}</td>
+              <td>{items.price}</td>
+              <td>{items.quantity}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+    
 }
 
 

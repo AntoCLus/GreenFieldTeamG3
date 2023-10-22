@@ -9,7 +9,10 @@ import { Footer } from './HomePage/Footer';
 import Navbar from "./HomePage/Navbar";
 import Home from "./components/homePage"
 import AddItem from "./components/createItem"
-import DeleteItemItem from "./components/deleteItem"
+import DeleteItem from "./components/deleteItem"
+import { BrowserRouter } from 'react-router-dom';
+import Services from "./components/services";
+
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
       </div>
      
       <Routes>
+      <Route path="/add-item" element={<AddItem />} />
+      <Route path="/delete-item" element={<DeleteItem />} />
+      <Route path="/services" element={<Services />} />
               <Route path="/home" element ={<Home/>}/>
               <Route exact path="/" element={<Login />} />
               <Route path="/sign-in" element={<Login />} />

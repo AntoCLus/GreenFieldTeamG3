@@ -1,0 +1,23 @@
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff; 
+    justify-content: center;
+  }
+  
+  .amazon-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
