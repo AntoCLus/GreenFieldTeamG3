@@ -12,6 +12,7 @@ import AddItem from "./components/createItem"
 import DeleteItem from "./components/deleteItem"
 import { BrowserRouter } from 'react-router-dom';
 import Services from "./components/services";
+import EditItem from './components/editItem';
 
 
 function App() {
@@ -28,13 +29,14 @@ function App() {
       </div>
      
       <Routes>
+      <Route path="/update/:id" component={<EditItem />} />
       <Route path="/add-item" element={<AddItem />} />
       <Route path="/delete-item" element={<DeleteItem />} />
       <Route path="/services" element={<Services />} />
-              <Route path="/home" element ={<Home/>}/>
-              <Route exact path="/" element={<Login />} />
-              <Route path="/sign-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/home" element ={<Home/>}/>
+     <Route exact path="/" element={<Login />} />
+      <Route path="/sign-in" element={<Login />} />
+       <Route path="/sign-up" element={<SignUp />} />
               
             </Routes>
     

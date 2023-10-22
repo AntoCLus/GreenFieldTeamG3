@@ -5,6 +5,7 @@ import { useState } from "react"
 import axios from "axios"
 import AddItem from "./createItem";
 import DeleteItem from "./deleteItem";
+import EditItem from "./editItem"
 
 const Home = () => {
     const [items, setItems] = useState([]);
@@ -58,12 +59,13 @@ const Home = () => {
                 </tbody>
             </table>
              ) : (
-              <p>My Items.</p>
+              <h2>My Items</h2>
             )}
         
            
         <AddItem />
         <DeleteItem />
+        <EditItem />
                   
 
             <p>List the items you have bought today</p>
@@ -75,6 +77,27 @@ const Home = () => {
 export default Home;
 
 
+/*   const Home = () => {
+    const [items, setItems] = useState([]);
+  
+    useEffect(() => {
+        axios
+            .get("https://localhost:8000/item")
+            .then((response) => {
+              const itemsData = response.data.reduce((acc, item) => {
+                if (!acc[item.name]) {
+                  acc[part.name] = { ...item, quantity: 0};
+                }
+                acc[item.name].quantity +=1;
+                return acc;
+              }, {});
+              const itemsArray = Object.values(itemsData);
+              setItems(itemsArray);
+            })
+            .catch((error) => {
+                console.error("Error fetching items:", error);
+            });
+    }, []);
 
 
 

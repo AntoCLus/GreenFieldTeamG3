@@ -1,23 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 48px 0;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  background-image: linear-gradient(45deg, #f1b52a, #b5b682);
+  min-height: 100vh;
+}
+
 .services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 40px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #fff; 
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.amazon-link, .homedepot-link, .walmart-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
   .card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    background-color: #fff; 
-    justify-content: center;
+    inline-size: card;
   }
-  
-  .amazon-link {
-    color: #007bff;
-    text-decoration: none;
+  .article-body p {
+    display: none;
   }
-  
+}
+
+@media (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+ 

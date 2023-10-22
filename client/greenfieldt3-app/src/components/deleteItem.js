@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -29,6 +30,8 @@ const DeleteItem = () => {
     };
 
     const handleDeleteSelected = () => {
+      const confirmed = window.confirm('Are you sure you want to delete the selected items?');
+        if (confirmed){
         selectedItems.forEach((itemId) => {
             axios.delete(`http://localhost:8000/item/${itemId}`)
             .then((res) => {
@@ -40,7 +43,7 @@ const DeleteItem = () => {
             });
         });
     };
-
+  }
 
     return (
             <div>
@@ -80,4 +83,4 @@ const DeleteItem = () => {
 }
 
 
-export default DeleteItem;
+export default DeleteItem; 
