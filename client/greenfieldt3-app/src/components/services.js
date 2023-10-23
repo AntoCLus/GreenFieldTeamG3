@@ -12,10 +12,10 @@ const Services = () => {
       .then((data) => setServiceData(data))
       .catch((error) => console.error("Error fetching service data:", error));
   }, []);
-
+//retrieve the info from each site which redirects to its link in our same platform
   return (
     <div>
-           <div className="services-container">
+           <div className="services-container"> 
            <h2> Amazon Services</h2>
       {serviceData && (
         <ul>

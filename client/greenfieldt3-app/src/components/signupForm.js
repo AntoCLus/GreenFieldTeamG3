@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class SignUp extends Component {
+export default class SignUp extends Component { //use component from react
     constructor(props) {
         super(props);
         this.state = {
@@ -12,13 +12,13 @@ export default class SignUp extends Component {
         };
     }
 
-    handleInputChange = (e) => {
+    handleInputChange = (e) => {// create the input
         this.setState({
             [e.target.name]: e.target.value,
         });
     };
 
-    handleRegister = (e) => {
+    handleRegister = (e) => {//retrieve info from the user to save to the database
         e.preventDefault();
         const { firstName, lastName, email, password } = this.state;
         console.log("Form Data:", { firstName, lastName, email, password });
@@ -39,14 +39,14 @@ export default class SignUp extends Component {
     };
 
     render() {
-        return (
+        return ( //render the input info
             <form onSubmit={this.handleRegister}> {/* Moved the onSubmit to the <form> element */}
                 <h3>Sign Up</h3>
 
                 <div className="mb-3">
                     <input
                         type="text"
-                        name="firstName"  // Corrected the input field name
+                        name="firstName" 
                         className="form-control"
                         placeholder="First name"
                         onChange={this.handleInputChange}
@@ -85,12 +85,12 @@ export default class SignUp extends Component {
                     </button>
                 </div>
                 <p className="forgot-password text-right">
-                    Already registered <a href="/sign-in">sign in?</a>
+                    Already registered <a href="/sign-in">sign in?</a> 
                 </p>
             </form>
         );
     }
-}
+}//redirects to sign in
 
 
 /* new code

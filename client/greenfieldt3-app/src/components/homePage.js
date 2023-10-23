@@ -10,9 +10,9 @@ import EditItem from "./editItem"
 const Home = () => {
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => {//we bring the items and we are able to add, delete and modify
         axios
-            .get("https://localhost:8000/item")
+            .get("https://localhost:8000/item")//gets the items we have from the database
             .then((response) => {
                 setItems(response.data);
             })
@@ -21,7 +21,7 @@ const Home = () => {
             });
     }, []);
 
-    const handleDeleteItem = (itemId) => {
+    const handleDeleteItem = (itemId) => {//not used for now
         axios
             .delete(`http://localhost:8000/item/${itemId}`)
             .then((res) => {
@@ -73,6 +73,7 @@ const Home = () => {
             
     );
 }
+//additem deleteitem and edititem are functions that are used in the code by import
 
 export default Home;
 
