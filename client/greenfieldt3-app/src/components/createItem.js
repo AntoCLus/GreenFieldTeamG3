@@ -53,4 +53,5 @@ const AddItem = () => {
         </div>
     );
 };
-export default AddItem
+
+export default AddItem;

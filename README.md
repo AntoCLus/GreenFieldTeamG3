@@ -1,1 +1,0 @@
-# GreenFieldTeamG3
